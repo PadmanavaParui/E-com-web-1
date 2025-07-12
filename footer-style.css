@@ -1,0 +1,101 @@
+footer{
+    background: black;
+}
+.footer_top{
+    color: white;
+
+    
+    background-image: linear-gradient(to left, rgb(var(--color-dottends-rgb)) 0 10%,
+    rgba(255, 255, 255, 0) 65% 100%);
+}
+.footer_top{
+    ul{
+        list-style: none;     
+        font-family: "Coustard", serif;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 17px;
+        li{
+            padding: 4px;
+        }
+    }
+    .footer_ul_wrapper{
+        padding-left: 17vw;
+        padding-bottom: 3vmin;
+        display: flex;
+        justify-content: flex-start;
+        gap: 30vmin;
+    }
+}
+.footer_logo{
+    padding-top: 10px;
+    padding-left: 7px;
+    font-family: "Caesar Dressing", system-ui;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.footer_bottom{
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    flex-wrap: wrap;
+    padding-top: clamp(24px, 3vw, 48px);
+    font-size: 14px;
+    font-weight: 400;
+    background-image: linear-gradient(to right, rgb(var(--color-dottends-rgb)) 0 10%,
+    rgba(255, 255, 255, 0) 65% 100%);
+}
+
+.footer_bottom{
+    ul{
+        list-style: none;
+        font-size: 14px;     
+        font-family: "Coustard", serif;
+        font-weight: 400;
+        font-style: normal;
+    }
+}
+
+.footer_bottom{
+    ul{
+        padding-left: 10vw;
+        padding-right: 10vw;
+        display: flex;
+        align-items: flex-end;
+        flex-wrap: wrap;
+    }
+    #fl_lh{
+        gap: 5vw;
+    }
+    #fl_rh{
+        gap: 3vw;
+    }
+}
+
+
+
+
+
+
+
+
+
+:root{
+    --color-dottends-rgb: 34,34,34;
+}
+
+
+.footer_end{
+    padding: 60px;
+    text-align: center;
+    color: white;
+
+    
+    font-family: "Gabriela", serif;
+    font-weight: 400;
+    font-style: normal;
+
+    font-size: 33px;
+}
