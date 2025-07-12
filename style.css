@@ -4,7 +4,7 @@
     margin: 0;
 }
 body{
-    background-color: #62929E;
+    background-color: rgba(18, 109, 101, 0.788);
     
 }
 /* making the scrollbar disappear */
@@ -18,7 +18,7 @@ body::-webkit-scrollbar{
 /* the header portion link contianer ul li and making the arrange ment space between */
 
 header{
-    background-color: #F7F9F9;
+    background-color: #04011862;
     width: 100vw;
 
 
@@ -48,13 +48,20 @@ header{
 }
 
 
+#about_us , #shop{
+    color: white;
+}
+
+
+
  /* the logo font setting in css using google font api*/
 #logo{
   /* font-family: "Almendra Display", serif;
   font-weight: 900;
   font-style: normal;
   color: #0C6291; */
-  text-shadow: 2px 2px 4px #FFBA08;
+  color: rgb(241, 221, 221);
+  text-shadow: 2px 2px 4px #010231;
   border-right: 1px solid #0C6291;
   font-size: 15px;
 }
@@ -65,9 +72,11 @@ header{
     margin-top: 0;
     margin-bottom: 0;
     height: max-content;
-    border-left: 1px solid #13070C;
-    border-right: 1px solid #13070C;
+    border-left: 1px solid #f7d002;
+    border-right: 1px solid #f7d002;
+    text-shadow: 2px 2px 4px #010231;
     transition: 1s;
+    color: #f7d002;
 }
 
 /* #login{
@@ -97,7 +106,7 @@ header{
 }
 .head_links_edit:hover{
     font-weight: 700;
-    border-bottom: 2px solid #13070C;
+    border-bottom: 2px solid #fcfcfc;
 }
 
 
