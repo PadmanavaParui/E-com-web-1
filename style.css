@@ -304,6 +304,23 @@ header{
     animation: rotate 3s infinite;
 }
 
+.arrow_down_animation{
+    i{
+        animation: arrow-scroller linear;
+        animation-timeline: scroll();
+        animation-range: exit 0% cover 60%;
+    }
+}
+
+
+@keyframes arrow-scroller{
+    from{
+        transform: scale(1);
+    }
+    to{
+        transform: scale(0);
+    }
+}
 
 
 @keyframes rotate{
@@ -334,7 +351,12 @@ header{
 
 .jumbled_animate{
     animation: jumbling 10s infinite;
+    animation-play-state: running;
 }
+.jumbled_animate:hover{
+    animation-play-state: paused;
+}
+
 
 @keyframes jumbling{
     0%{}
