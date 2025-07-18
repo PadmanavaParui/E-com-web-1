@@ -28,12 +28,16 @@ const signupLink = document.getElementById('signup');
 const shop = document.getElementById('shop');
 shop.style.display = 'none'; // Hide shop by default
 
+const container1 = document.querySelector('.container1');
+container1.style.display = 'none'; // Hide container1 by default
+
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
     const email = user.email;
     profile.style.display = 'inline-block';
     shop.style.display = 'inline-block'; // Show shop when user is signed in
+    container1.style.display = 'block'; // Show container1 when user is signed in
     loginLink.style.display = 'none';
     signupLink.style.display = 'none';
   } else {
