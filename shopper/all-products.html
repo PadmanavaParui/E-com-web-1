@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>All Products - Shop</title>
+    
+    <!-- font-awesome-kit -->
+     <script src="https://kit.fontawesome.com/7aa81c2e04.js" crossorigin="anonymous"></script>
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Glegoo:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="allprod-style.css">
+    <style>
+        .main-header {
+            width: 100vw;
+            background: #04011862;
+            padding: 16px 0 8px 0;
+            z-index: 200;
+            display: flex;
+            align-items: center;
+            flex-direction: row;
+            justify-content: space-evenly;
+        }
+        .header-home {
+            color: #F7D002;
+            font-family: 'Glegoo',serif;
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: 2px;
+            /* flex: 1; */
+            text-align: left;
+            padding-left: 32px;
+        }
+        .header-shop {
+            color: #F7D002;
+            font-family: 'Glegoo',serif;
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: 2px;
+            /* flex: 1; */
+            text-align: right;
+            padding-right: 32px;
+        }
+        .category-nav {
+            display: flex;
+            justify-content: center;
+            gap: 18px;
+            margin-bottom: 32px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            background: #1a2a2e;
+            padding: 16px 0 8px 0;
+        }
+        .cat-btn {
+            padding: 10px 28px;
+            border: 2px solid #F7D002;
+            background: transparent;
+            color: #F7D002;
+            font-family: "Glegoo", serif;
+            font-size: 1rem;
+            border-radius: 20px;
+            cursor: pointer;
+            transition: all 0.2s;
+            text-transform: uppercase;
+        }
+        .cat-btn.active, .cat-btn:hover {
+            background: #F7D002;
+            color: #1a2a2e;
+        }
+    </style>
+</head>
+<body>
+    <header class="main-header">
+        <div class="header-home"><a href="../index.html" style="color:#F7D002;text-decoration:none;">Home</a></div>
+        <div class="header-shop"><span style="font-size:0.9rem;font-weight:400;color:#F8C9B4;">You are in :</span> <span style="font-size:0.9rem;">Shopping Corner</span></div>
+        <div style="display:flex;align-items:center;gap:18px;">
+            <div id="cart-icon" style="position:relative;cursor:pointer;">
+                <i class="fa-solid fa-cart-shopping" style="color:#F7D002;font-size:1.7rem;"></i>
+                <span id="cart-count" style="position:absolute;top:-8px;right:-10px;background:#F7D002;color:#1a2a2e;font-size:0.9rem;border-radius:50%;padding:2px 7px;min-width:22px;text-align:center;">0</span>
+            </div>
+            <li class="header_profile" id = "profile" style="list-style: none;">
+                <i class="fa-solid fa-user" style="color: white;"></i>
+                <div class="profile_dropdown">
+                    <ul>
+                        <li onclick="window.location.href='../loginfeatures/lg.html'">Profile</li>
+                        <li id="logout-btn">Logout</li>
+                    </ul>
+                </div>
+            </li>
+        </div>
+    </header>
+    <div class="all-products-container">
+        <h1>All Products</h1>
+        <nav class="category-nav">
+            <button class="cat-btn active" data-category="all">All</button>
+            <button class="cat-btn" data-category="sports">Sports</button>
+            <button class="cat-btn" data-category="stationary">Stationary</button>
+            <button class="cat-btn" data-category="gadgets">Gadgets</button>
+        </nav>
+        <div class="products-grid" id="allProductsGrid"></div>
+    <!-- Cart Modal -->
+    <div id="cart-modal" style="display:none;position:fixed;top:0;right:0;width:350px;max-width:90vw;height:100vh;background:#222d38;box-shadow:-2px 0 16px #0008;z-index:9999;padding:24px 18px 18px 18px;overflow-y:auto;transition:all 0.3s;">
+        <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:18px;">
+            <h2 style="color:#F7D002;font-size:1.4rem;margin:0;">Your Cart</h2>
+            <button id="close-cart" style="background:none;border:none;font-size:1.5rem;color:#F7D002;cursor:pointer;">&times;</button>
+        </div>
+        <div id="cart-items"></div>
+        <div id="cart-total" style="color:#F7D002;font-size:1.1rem;margin-top:18px;"></div>
+    </div>
+    </div>
+    <script src="products.js"></script>
+    <script type="module" src="acct.js"></script>
+</body>
+</html>

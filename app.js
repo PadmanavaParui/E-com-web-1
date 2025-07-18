@@ -25,12 +25,15 @@ const auth = getAuth();
 const profile = document.getElementById('profile');
 const loginLink = document.getElementById('login');
 const signupLink = document.getElementById('signup');
+const shop = document.getElementById('shop');
+shop.style.display = 'none'; // Hide shop by default
 
 onAuthStateChanged(auth, (user) => {
   if (user) {
     // User is signed in
     const email = user.email;
     profile.style.display = 'inline-block';
+    shop.style.display = 'inline-block'; // Show shop when user is signed in
     loginLink.style.display = 'none';
     signupLink.style.display = 'none';
   } else {
