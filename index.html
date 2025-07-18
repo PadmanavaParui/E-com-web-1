@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NAME</title>
+    <title>Shop Addict</title>
 
 
     <!-- the google font api -->
@@ -16,6 +16,8 @@
     <!-- font-awesome-kit -->
      <script src="https://kit.fontawesome.com/7aa81c2e04.js" crossorigin="anonymous"></script>
 
+
+     <script type="module" src="app.js"></script>
       
     <!-- my css file -->
     <link rel="stylesheet" href="style.css">
@@ -26,13 +28,25 @@
         <div class="link-container">
             <ul class="left_hand">
                 <!-- <li id = "logo">UNNAMED</li> -->
-                 <li class="text_edit1" id="logo">NAME</li>
+                 <li class="text_edit1" id="logo">Shop Addict</li>
             </ul>
             <ul class="right_hand">
-                <li class="head_links_edit" id = "about_us">ABOUT US</li>
+                <li class="head_links_edit" id = "about_us"  onclick="window.location.href='about/abt.html'">ABOUT US</li>
                 <li class="head_links_edit" id = "shop">SHOP</li>
-                <li class="header_main_buttons header_buttons_font" id = "login">LOG IN</li>
-                <li class="header_main_buttons header_buttons_font" id = "signup">SIGN UP</li>
+                <li class="header_main_buttons header_buttons_font" id = "login" onclick="window.location.href='loginfeatures/login.html'">LOG IN</li>
+                <li class="header_main_buttons header_buttons_font" id = "signup" onclick="window.location.href='loginfeatures/signup-index.html'">SIGN UP</li>
+                <li class="header_profile" id = "profile">
+                    <i class="fa-solid fa-user" style="color: white;"></i>
+                    <div class="profile_dropdown">
+                        <ul>
+                            <!-- <li onclick="window.location.href='loginfeatures/login.html'">Login</li>
+                            <li onclick="window.location.href='loginfeatures/signup-index.html'">SignUp</li> -->
+                            <li onclick="window.location.href='loginfeatures/lg.html'">Profile</li>
+                            <li id="logout-btn">Logout</li>
+                            <!-- <li onclick="window.location.href='loginfeatures/settings.html'">Settings</li> -->
+                        </ul>
+                    </div>
+                </li>
             </ul>
         </div>
     </header>
@@ -124,7 +138,7 @@
     <footer>
         <div class="footer_top">
             <div class="footer_desc_wrapper">
-                <h1 class="footer_logo">NAME</h1>
+                <h1 class="footer_logo">Shop Addict</h1>
                 <div class="footer_ul_wrapper">
                     <ul>
                         <li>About Us</li>
@@ -160,4 +174,5 @@
     </footer>
 
 </body>
+<script src="dropdown-script.js"></script>
 </html>

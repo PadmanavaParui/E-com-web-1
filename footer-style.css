@@ -1,3 +1,42 @@
+/* Profile dropdown styles */
+.header_profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile_dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #222;
+    color: #fff;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    z-index: 1000;
+    padding: 0.5em 0;
+}
+
+.profile_dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile_dropdown ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.profile_dropdown ul li:hover {
+    background: #444;
+}
+
+.header_profile:hover .profile_dropdown {
+    display: block;
+}
 footer{
     background: black;
 }
