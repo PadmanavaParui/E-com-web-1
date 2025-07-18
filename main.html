@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NAME</title>
+
+    <!-- the google font api -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Akronim&family=Almendra+Display&family=Barrio&family=Caesar+Dressing&family=Copse&family=Coustard:wght@400;900&family=Gabriela&family=Glegoo:wght@400;700&family=Major+Mono+Display&display=swap"
+        rel="stylesheet">
+
+    <!-- font-awesome-kit -->
+    <script src="https://kit.fontawesome.com/7aa81c2e04.js" crossorigin="anonymous"></script>
+
+    <style>
+        * {
+            padding: 0;
+            margin: 0;
+        }
+
+        body {
+            background-color: rgba(18, 109, 101, 0.788);
+        }
+
+        /* making the scrollbar disappear */
+        body::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* the header portion */
+        header {
+            background-color: #04011862;
+            width: 100vw;
+            position: sticky;
+            top: 0;
+        }
+
+        .link-container {
+            display: flex;
+            justify-content: space-between;
+            justify-items: center;
+            align-items: center;
+        }
+
+        .link-container>ul {
+            list-style-type: none;
+        }
+
+        .link-container>ul>li {
+            padding: 1vh;
+        }
+
+        .left_hand {
+            display: flex;
+            flex-direction: row;
+        }
+
+        .right_hand {
+            display: flex;
+            flex-direction: row;
+            gap: 3px;
+        }
+
+        #about_us,
+        #shop {
+            color: white;
+        }
+
+        #logo {
+            color: rgb(241, 221, 221);
+            text-shadow: 2px 2px 4px #010231;
+            border-right: 1px solid #0C6291;
+            font-size: 15px;
+        }
+
+        /* the header login and signup button */
+        .header_main_buttons {
+            margin-top: 0;
+            margin-bottom: 0;
+            height: max-content;
+            border-left: 1px solid #f7d002;
+            border-right: 1px solid #f7d002;
+            text-shadow: 2px 2px 4px #010231;
+            transition: 1s;
+            color: #f7d002;
+        }
+
+        .header_main_buttons:hover {
+            color: white;
+            background-color: #13070C;
+            border-left: 1px solid white;
+            border-right: 1px solid white;
+        }
+
+        .header_buttons_font {
+            font-family: "Copse", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        /* the header about us and shop button */
+        .head_links_edit {
+            font-family: "Glegoo", serif;
+            font-weight: 400;
+            font-style: normal;
+            transition-duration: 1ms;
+            font-size: 12px;
+        }
+
+        .head_links_edit:hover {
+            font-weight: 700;
+            border-bottom: 2px solid #fcfcfc;
+        }
+
+        /* main part */
+        .container {
+            height: 100vh;
+            width: 100vw;
+            background: no-repeat url("background2.jpg"), #363612a4;
+            background-blend-mode: multiply;
+            background-size: 100%, 100%;
+            color: #F7F9F9;
+        }
+
+        .wrapper_heading1-2 {
+            position: absolute;
+            top: 25%;
+            left: 5%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .heading_line1 {
+            font-family: "Akronim", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 10vh;
+            text-decoration: underline;
+            text-decoration-thickness: 5px;
+        }
+
+        .heading_line2 {
+            text-transform: uppercase;
+            font-family: "Barrio", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            color: #F7D002;
+        }
+
+        .p_wrapper {
+            position: absolute;
+            display: flex;
+            gap: 5px;
+        }
+
+        .dynamic_txt li {
+            list-style: none;
+            color: #F8C9B4;
+            position: relative;
+        }
+
+        .p_wrapper .dynamic_txt {
+            line-height: 17px;
+            height: 17px;
+            overflow: hidden;
+        }
+
+        .dynamic_txt li {
+            top: 0;
+            position: relative;
+            animation: slide 15s steps(5) infinite;
+        }
+
+        .dynamic_txt li::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            background: #65634F;
+            border-left: 2px solid #F8C9B4;
+            animation: typing 3s steps(12) infinite;
+        }
+
+        .ad {
+            position: absolute;
+            left: 50%;
+            bottom: 1%;
+            font-size: 40px;
+        }
+
+        .arrow_down_animation {
+            position: relative;
+            animation: rotate 3s infinite;
+        }
+
+        .jumbled {
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+        }
+
+        .catchy_text {
+            position: absolute;
+        }
+
+        .jumbled2 {
+            position: absolute;
+            top: 45%;
+            right: 15%;
+            font-size: 3vmin;
+            height: 40vmin;
+            text-align: center;
+        }
+
+        .catchy_text2 {
+            writing-mode: vertical-lr;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            text-transform: uppercase;
+            font-family: "Major Mono Display", monospace;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .text_edit1 {
+            font-family: "Caesar Dressing", system-ui;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 35px;
+        }
+
+        .jumbled_animate {
+            animation: jumbling 10s infinite;
+            animation-play-state: running;
+        }
+
+        .jumbled_animate:hover {
+            animation-play-state: paused;
+        }
+
+
+        @keyframes arrow-scroller {
+            from {
+                transform: scale(1);
+            }
+
+            to {
+                transform: scale(0);
+            }
+        }
+
+        @keyframes rotate {
+            0% {}
+
+            100% {
+                transform: rotateY(180deg);
+            }
+        }
+
+        @keyframes typing {
+
+            40%,
+            60% {
+                left: calc(100% + 10px);
+            }
+
+            100% {
+                left: 0;
+            }
+        }
+
+        @keyframes slide {
+            100% {
+                top: -85px;
+            }
+        }
+
+        @keyframes jumbling {
+            0% {}
+
+            25% {
+                transform: rotate3d(1, 1, 1, 45deg);
+            }
+
+            50% {
+                transform: rotate3d(-1, 1, 1, 45deg);
+                scale: 2;
+            }
+
+            75% {
+                transform: rotate3d(-1, 1, 1, 270deg);
+                scale: 1.5;
+            }
+
+            100% {
+                scale: 1;
+            }
+        }
+
+
+        .container1 {
+            background: url("container1_vid.mp4");
+            height: 100vh;
+            width: 100vw;
+            padding-top: 7vmin;
+        }
+
+        .wrapped_1 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-items: center;
+        }
+
+        .wrapped_1 h1 {
+            font-family: 'Courier New', Courier, monospace;
+            margin-bottom: 7vmin;
+        }
+
+        .item_wrapper {
+            display: flex;
+            flex-flow: row;
+            gap: 3vmin;
+        }
+
+
+        .item {
+            height: 45vmin;
+            width: 30vmin;
+            min-height: 260px;
+            max-height: 360px;
+            min-width: 200px;
+            max-width: 280px;
+            border: 1px solid black;
+            border-radius: 30px;
+            background-color: rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 10px;
+            box-sizing: border-box;
+            position: relative;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            overflow: hidden;
+        }
+
+        .item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .item img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            padding: 20px;
+            flex-grow: 1;
+            display: block;
+            margin: 0 auto;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover img {
+            transform: scale(1.1);
+        }
+
+        .item .buy {
+            position: absolute;
+            top: 0;
+            left: 0;
+            height: 100%;
+            width: 100%;
+            border-radius: 30px;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .item:hover .buy {
+            opacity: 1;
+        }
+
+        .item .buy i {
+            color: white;
+            font-size: 55px;
+            transition: transform 0.3s ease;
+        }
+
+        .item:hover .buy i {
+            transform: scale(1.2);
+        }
+
+        .category-title {
+            text-align: center;
+            font-family: "Glegoo", serif;
+            font-size: 18px;
+            color: white;
+            margin-top: 10px;
+            transition: color 0.3s ease;
+        }
+
+        .item:hover .category-title {
+            color: #F7D002;
+        }
+
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 999;
+            padding-top: 60px;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.6);
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 60%;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .close {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+
+        footer {
+            background: black;
+        }
+
+        .footer_top {
+            color: white;
+            background-image: linear-gradient(to left, rgb(34, 34, 34) 0 10%, rgba(255, 255, 255, 0) 65% 100%);
+        }
+
+        .footer_top ul {
+            list-style: none;
+            font-family: "Coustard", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 17px;
+        }
+
+        .footer_top ul li {
+            padding: 4px;
+        }
+
+        .footer_ul_wrapper {
+            padding-left: 17vw;
+            padding-bottom: 3vmin;
+            display: flex;
+            justify-content: flex-start;
+            gap: 30vmin;
+        }
+
+        .footer_logo {
+            padding-top: 10px;
+            padding-left: 7px;
+            font-family: "Caesar Dressing", system-ui;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .footer_bottom {
+            color: white;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            flex-wrap: wrap;
+            padding-top: clamp(24px, 3vw, 48px);
+            font-size: 14px;
+            font-weight: 400;
+            background-image: linear-gradient(to right, rgb(34, 34, 34) 0 10%, rgba(255, 255, 255, 0) 65% 100%);
+        }
+
+        .footer_bottom ul {
+            list-style: none;
+            font-size: 14px;
+            font-family: "Coustard", serif;
+            font-weight: 400;
+            font-style: normal;
+            padding-left: 10vw;
+            padding-right: 10vw;
+            display: flex;
+            align-items: flex-end;
+            flex-wrap: wrap;
+        }
+
+        #fl_lh {
+            gap: 5vw;
+        }
+
+        #fl_rh {
+            gap: 3vw;
+        }
+
+        .footer_end {
+            padding: 60px;
+            text-align: center;
+            color: white;
+            font-family: "Gabriela", serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: 33px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="link-container">
+            <ul class="left_hand">
+                <li class="text_edit1" id="logo">NAME</li>
+            </ul>
+            <ul class="right_hand">
+                <li class="head_links_edit" id="about_us">ABOUT US</li>
+                <li class="head_links_edit" id="shop">SHOP</li>
+                <li class="header_main_buttons header_buttons_font" id="login">LOG IN</li>
+                <li class="header_main_buttons header_buttons_font" id="signup">SIGN UP</li>
+            </ul>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="wrapper_heading1-2">
+            <h1 class="heading_line1">Your Productivity Hub Starts Here</h1>
+            <div class="heading_line2">
+                <p>Your Daily Essentials, Delivered Smartly</p>
+                <div class="p_wrapper">
+                    <div class="static_txt">Simplify Life. Amplify</div>
+                    <ul class="dynamic_txt">
+                        <li>Productivity</li>
+                        <li>Performance</li>
+                        <li>Creativity</li>
+                        <li>Potential</li>
+                        <li>Workflow</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="ad">
+            <div class="arrow_down_animation">
+                <i class="fa-solid fa-angle-down"></i>
+            </div>
+        </div>
+
+        <div class="jumbled catchy_text">
+            Essentials That Power Your Day
+        </div>
+
+        <div class="jumbled2 catchy_text2 jumbled_animate jumbled_shrink">
+            Simplify Life. Amplify Efficiency. Simplify Life. Amplify Creativity. Simplify Life. Amplify Focus. Amplify
+            Clarity, Results and innovation.
+        </div>
+    </div>
+
+    <div class="container1 wrapped_1">
+        <h1 class="category1">Shop By Category</h1>
+        <div class="item_wrapper">
+            <!-- Sports Category -->
+            <div class="item category" data-category="Sports">
+                <div class="buy"><i class="fa-solid fa-cart-shopping"></i></div>
+                <img src="https://t4.ftcdn.net/jpg/00/04/43/79/240_F_4437974_DbE4NRiaoRtUeivMyfPoXZFNdCnYmjPq.jpg"
+                    alt="Sports">
+                <p class="category-title">Sports</p>
+            </div>
+
+            <!-- Stationary Category -->
+            <div class="item category" data-category="Stationary">
+                <div class="buy"><i class="fa-solid fa-cart-shopping"></i></div>
+                <img src="https://images.unsplash.com/photo-1526566762798-8fac9c07aa98?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MTl8fHN0YXRpb25lcnl8ZW58MHx8MHx8fDA%3D"
+                    alt="Stationary" height="123px">
+                <p class="category-title">Stationary</p>
+            </div>
+
+            <!-- Gadgets Category -->
+            <div class="item category" data-category="Gadgets">
+                <div class="buy"><i class="fa-solid fa-cart-shopping"></i></div>
+                <img src="https://imgs.search.brave.com/4vF5-VINQutgfUoOfouWEq3FOHwtZ5f6MuX8f_IkyQo/rs:fit:500:0:1:0/g:ce/aHR0cHM6Ly90aHVt/YnMuZHJlYW1zdGlt/ZS5jb20vYi9nYWRn/ZXRzLWFjY2Vzc29y/aWVzLWdhZGdldHMt/YWNjZXNzb3JpZXMt/aXNvbGF0ZWQtd2hp/dGUtYmFja2dyb3Vu/ZC0xMzM0MjkwMDQu/anBn"
+                    alt="Gadgets" height="123px">
+                <p class="category-title">Gadgets</p>
+            </div>
+        </div>
+
+        <!-- Modal for Adding Products -->
+        <div id="productModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Add Product</h2>
+                <input type="text" id="productInput" placeholder="Enter product name" />
+                <button id="addProductBtn">Add</button>
+                <ul id="productList"></ul>
+            </div>
+        </div>
+
+        <!-- Product Display Section -->
+        <div id="product-section" class="product-container" style="display:none;">
+            <h2 id="product-category-title"></h2>
+            <div id="product-list" class="product-list"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer_top">
+            <div class="footer_desc_wrapper">
+                <h1 class="footer_logo">NAME</h1>
+                <div class="footer_ul_wrapper">
+                    <ul>
+                        <li>About Us</li>
+                        <li>FAQs</li>
+                        <li>Contact Us</li>
+                    </ul>
+                    <ul>
+                        <li>Home</li>
+                        <li>Collections</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer_bottom">
+            <ul id="fl_lh">
+                <li>cookies</li>
+                <li>legal terms</li>
+            </ul>
+            <ul id="fl_rh">
+                <li>CONNECT :</li>
+                <li>Linkedin</li>
+            </ul>
+        </div>
+        <div class="footer_end">
+            Thanks for shopping! Come back soon for more great finds.
+        </div>
+    </footer>
+
+    <script>
+        function formatRupee(price) {
+            return '₹' + price.toLocaleString('en-IN', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+        }
+
+        <p class="product-price">${formatRupee(product.price)}</p>
+
+        const modal = document.getElementById("productModal");
+        const modalTitle = document.getElementById("modalTitle");
+        const productInput = document.getElementById("productInput");
+        const productList = document.getElementById("productList");
+        let currentCategory = "";
+
+        document.querySelectorAll(".category").forEach(item => {
+            item.addEventListener("click", () => {
+                currentCategory = item.dataset.category;
+                modalTitle.innerText = `Add Product to ${currentCategory}`;
+                productList.innerHTML = "";
+                modal.style.display = "block";
+            });
+        });
+
+        document.querySelector(".close").onclick = function () {
+            modal.style.display = "none";
+        };
+
+        window.onclick = function (event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        };
+
+        document.getElementById("addProductBtn").addEventListener("click", () => {
+            const productName = productInput.value.trim();
+            if (productName) {
+                const li = document.createElement("li");
+                li.innerText = productName;
+                productList.appendChild(li);
+                productInput.value = "";
+            }
+        });
+    </script>
+
+    <script>
+        document.getElementById("shop").addEventListener("click", function () {
+            window.location.href = "index.html";
+        });
+
+        document.querySelectorAll(".category").forEach((item) => {
+            item.addEventListener("click", function () {
+                const category = this.dataset.category.toLowerCase();
+                window.location.href = `index.html?category=${category}`;
+            });
+        });
+
+        document.getElementById("logo").addEventListener("click", function () {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+        });
+    </script>
+
+</body>
+
+</html>
