@@ -1,0 +1,115 @@
+body {
+    background: #1a2a2e;
+    color: #fff;
+    font-family: 'Glegoo', serif;
+    margin: 0;
+    padding: 0;
+}
+.all-products-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: #F7D002;
+    margin-bottom: 30px;
+    font-size: 3rem;
+}
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 30px;
+}
+.product-card {
+    background: rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 18px;
+    border: 1px solid rgba(255,255,255,0.18);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    text-align: center;
+    transition: 0.2s;
+}
+.product-card:hover {
+    box-shadow: 0 8px 32px rgba(247,208,2,0.18);
+    border-color: #F7D002;
+}
+.product-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.product-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+    color: #fff;
+}
+.product-category {
+    display: inline-block;
+    background: rgba(247,208,2,0.18);
+    color: #F7D002;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    margin-bottom: 8px;
+}
+.product-price {
+    color: #F7D002;
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+.product-description {
+    color: #F8C9B4;
+    font-size: 0.95rem;
+    margin-bottom: 10px;
+}
+@media (max-width: 768px) {
+    h1 { font-size: 2rem; }
+    .products-grid { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 16px; }
+}
+
+
+
+/* Profile dropdown styles */
+.header_profile {
+    position: relative;
+    cursor: pointer;
+}
+
+.profile_dropdown {
+    display: none;
+    position: absolute;
+    top: 120%;
+    right: 0;
+    background: #222;
+    color: #fff;
+    min-width: 140px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+    border-radius: 6px;
+    z-index: 1000;
+    padding: 0.5em 0;
+}
+
+.profile_dropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.profile_dropdown ul li {
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.profile_dropdown ul li:hover {
+    background: #444;
+}
+
+.header_profile:hover .profile_dropdown {
+    display: block;
+}
