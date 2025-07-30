@@ -1,27 +1,34 @@
-name: CI/CD Pipeline
+name: Basic Checks for Static Website
 
 on:
   push:
-    branches: [main]
+    branches: [ main ]
   pull_request:
-    branches: [main]
+    branches: [ main ]
 
 jobs:
-  build:
+  lint-html:
     runs-on: ubuntu-latest
+
     steps:
-      - name: Checkout code
+      - name: ⬇ Checkout code
         uses: actions/checkout@v4
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
+
+      - name: 🔍 Check HTML syntax
+        uses: Cyb3r-Jak3/htmlhint-action@v1.1.0
         with:
-          node-version: '20.x'
-      # Automated test and deploy (no tidy)
-      - name: List project files
-        run: ls -R
-      # Deploy to GitHub Pages (deploy only main web files)
-      - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./
+          files: '/*.html'
+
+  check-css-js:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: ⬇ Checkout code
+        uses: actions/checkout@v4
+
+      - name: 📂 List CSS and JS files
+        run: |
+          echo "CSS files:"
+          find . -name "*.css"
+          echo "JS files:"
+          find . -name "*.js"
