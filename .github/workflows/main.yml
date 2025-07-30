@@ -9,15 +9,17 @@ on:
 jobs:
   lint-html:
     runs-on: ubuntu-latest
-
     steps:
       - name: ⬇ Checkout code
         uses: actions/checkout@v4
-
-      - name: 🔍 Check HTML syntax
-        uses: Cyb3r-Jak3/htmlhint-action@v1.1.0
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
         with:
-          files: '/*.html'
+          node-version: '20.x'
+      - name: Install htmlhint
+        run: npm install -g htmlhint
+      - name: Run htmlhint on HTML files
+        run: htmlhint "**/*.html"
 
   check-css-js:
     runs-on: ubuntu-latest
