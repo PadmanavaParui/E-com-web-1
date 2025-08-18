@@ -19,3 +19,4 @@ jobs:
  context: .
  push: true
  tags: yourdockerhubusername/ecommerce-site:latest
+
